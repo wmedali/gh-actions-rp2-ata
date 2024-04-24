@@ -1,4 +1,4 @@
-name: Execute cypress tests
+name: Postman tests
 
 on:
   push:
