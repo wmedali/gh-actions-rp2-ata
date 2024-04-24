@@ -14,5 +14,8 @@ jobs:
       - name: Installer newman
         run: npm install -g newman
 
+      - name: Installer htmlextra reporter
+        run: npm install -g newman-reporter-htmlextra
+
       - name: Executer les tests postman
-        run: newman run postman/collection.json
+        run: newman run postman/collection.json -r cli,htmlextra
