@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  execute-tests:
+  execute-cypress-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Recuperer le code
@@ -15,3 +15,15 @@ jobs:
 
       - name: Executer les tests
         run: npx cypress run
+
+  execute-postman-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v4
+
+      - name: Installer newman
+        run: npm install -g newman
+
+      - name: Executer les tests postman
+        run: newman run postman/collection.json
