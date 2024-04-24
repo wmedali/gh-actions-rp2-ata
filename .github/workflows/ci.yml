@@ -1,6 +1,7 @@
 name: Execute cypress tests
 
-on: push
+on:
+  push:
 
 jobs:
   execute-tests:
