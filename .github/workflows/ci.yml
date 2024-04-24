@@ -1,0 +1,16 @@
+name: Execute cypress tests
+
+on: push
+
+jobs:
+  execute-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Etape 1
+        run: echo "Etape 1"
+      - name: Etape 2
+        run: echo "Etape 2"
+      - name: Etape 3
+        run: echo "Etape 3"
+      - name: Etape 4
+        run: echo "Etape 3"
