@@ -19,3 +19,9 @@ jobs:
 
       - name: Executer les tests postman
         run: newman run postman/collection.json -r cli,htmlextra
+
+      - name: Publier le rapport des résultats
+        uses: actions/upload-artifact@v4
+        with:
+          name: newman-report
+          path: newman/
