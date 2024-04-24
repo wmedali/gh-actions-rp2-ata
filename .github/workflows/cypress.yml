@@ -1,0 +1,18 @@
+name: Execute cypress tests
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  execute-cypress-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v4
+
+      - name: Installer les dépendances
+        run: npm install
+
+      - name: Executer les tests
+        run: npx cypress run
