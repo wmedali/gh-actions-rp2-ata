@@ -4,38 +4,14 @@ on:
   push:
 
 jobs:
-  execute-tests-1:
+  execute-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Etape 1
-        run: echo "Etape 1"
-      - name: Etape 2
-        run: echo "Etape 2"
-      - name: Etape 3
-        run: echo "Etape 3"
-      - name: Etape 4
-        run: echo "Etape 3"
+      - name: Recuperer le code
+        uses: actions/checkout@v4
 
-  execute-tests-2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Etape 1
-        run: echo "Etape 1"
-      - name: Etape 2
-        run: echo "Etape 2"
-      - name: Etape 3
-        run: echo "Etape 3"
-      - name: Etape 4
-        run: echo "Etape 3"
+      - name: Installer les dépendances
+        run: npm install
 
-  execute-tests-3:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Etape 1
-        run: echo "Etape 1"
-      - name: Etape 2
-        run: echo "Etape 2"
-      - name: Etape 3
-        run: echo "Etape 3"
-      - name: Etape 4
-        run: echo "Etape 3"
+      - name: Executer les tests
+        run: npx cypress run
